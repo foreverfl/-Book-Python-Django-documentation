@@ -1,5 +1,4 @@
-# Django Tutorial
-Django 튜토리얼 정리 자료
+# [학습자료] Django Tutorial
 
 ## 목차
 - Part01. 요청과 응답
