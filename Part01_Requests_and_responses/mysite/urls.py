@@ -20,5 +20,5 @@ from django.urls import path  # 함수는 URL 패턴과 뷰를 연결하는 데 
 
 urlpatterns = [
     path("polls/", include("polls.urls")),
-    path("admin/", admin.site.urls),  # Django의 관리자 사이트 URL
+    path("admin/", admin.site.urls),  # Django의 관리자 사이트 URL. 유일하게 include 형식이 아님.
 ]
