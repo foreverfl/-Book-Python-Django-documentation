@@ -1,5 +1,4 @@
 from django.urls import path  # URL 패턴과 뷰 함수를 연결하는 역할
-
 from . import views  # 현재 패키지(현재 앱)에서 views.py 파일을 import
 
 app_name = "polls"
