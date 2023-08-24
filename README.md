@@ -155,7 +155,7 @@ get_object_or_404(Model, pk=model_id).
 
 ## Part04. 폼과 제네릭 뷰
 ### views.py
-> - IndexView: 객체 리스트를 표시하는 뷰에 사용.
+- IndexView: 객체 리스트를 표시하는 뷰에 사용.
 ```python
 class IndexView(generic.ListView):
     template_name = "polls/index.html"
@@ -165,7 +165,7 @@ class IndexView(generic.ListView):
         return Question.objects.order_by("-pub_date")[:5]
 ```
 
-> - DetailView: 특정 객체의 세부 정보를 표시하는 뷰에 사용.
+- DetailView: 특정 객체의 세부 정보를 표시하는 뷰에 사용.
 ```python
 from django.views import generic
 from .models import Question
@@ -175,7 +175,7 @@ class DetailView(generic.DetailView):
     template_name = "polls/detail.html"
 ```
 
-> - ResultsView: 특정 결과를 표시하는 뷰.
+- ResultsView: 특정 결과를 표시하는 뷰.
 
 ```python
 from django.views import generic
@@ -186,7 +186,7 @@ class ResultsView(generic.DetailView):
     template_name = "polls/results.html"
 ```
 
-> - reverse(): URL 패턴의 이름과 추가 인수를 받아 해당 URL을 생성.
+- reverse(): URL 패턴의 이름과 추가 인수를 받아 해당 URL을 생성.
 ```python
 from django.urls import reverse
 
@@ -196,8 +196,8 @@ def vote(request, question_id):
 ```
 
 ### template.html
-- {forloop.counter}: for 루프 내에서 사용할 수 있는 특별한 변수. 인덱스는 1부터 시작하며, 각 반복마다 1씩 증가.
-- {variable|pluralize}: Django 템플릿 필터 중 하나로, 값이 1이 아닐 경우 문자열 끝에 's'를 추가. 
+> - {forloop.counter}: for 루프 내에서 사용할 수 있는 특별한 변수. 인덱스는 1부터 시작하며, 각 반복마다 1씩 증가.
+> - {variable|pluralize}: Django 템플릿 필터 중 하나로, 값이 1이 아닐 경우 문자열 끝에 's'를 추가. 
 
 ## Part05. 테스트
 ## Part06. 정적 파일
