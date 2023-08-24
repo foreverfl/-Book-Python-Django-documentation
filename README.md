@@ -122,18 +122,25 @@ Django 프로젝트에서 관리자(superuser) 계정을 생성하는 명령어.
 
 ## Part03. 뷰와 템플릿
 ### urls.py: URL 경로와 해당 경로에 대한 뷰 함수를 연결.
-> - path("link", method, name)
-> 1. "link": URL 패턴 문자열. 사용자가 이 경로로 접속하면 연결된 뷰 함수가 호출됨.
-> 2. method: 해당 URL 패턴에 대한 뷰 함수.
-> 3. name: URL 패턴에 별칭을 부여하여 템플릿 또는 뷰에서 쉽게 참조할 수 있음.
+```python
+path("link", method, name)
+```
+> - "link": URL 패턴 문자열. 사용자가 이 경로로 접속하면 연결된 뷰 함수가 호출됨.
+> - method: 해당 URL 패턴에 대한 뷰 함수.
+> - name: URL 패턴에 별칭을 부여하여 템플릿 또는 뷰에서 쉽게 참조할 수 있음.
 
 ### views.py: 사용자의 요청을 처리하고 응답을 반환하는 뷰 함수나 클래스를 정의.
-> - render(request, template.html, context)
-> 1. request: 사용자의 요청 객체.
-> 2. template.html: 렌더링할 템플릿 파일의 이름.
-> 3. context: 템플릿에 전달할 변수들을 담은 딕셔너리.
-> 
-> - get_object_or_404(Model, pk=model_id): 특정 모델에서 주어진 조건을 만족하는 객체를 가져오거나, 객체가 없으면 404 오류를 발생시킴.
+```python
+render(request, template.html, context)
+```
+> - request: 사용자의 요청 객체.
+> - template.html: 렌더링할 템플릿 파일의 이름.
+> - context: 템플릿에 전달할 변수들을 담은 딕셔너리.
+
+```python
+get_object_or_404(Model, pk=model_id).
+```
+> - 특정 모델에서 주어진 조건을 만족하는 객체를 가져오거나, 객체가 없으면 404 오류를 발생시킴.
 > 1. Model: 조회할 모델 클래스.
 > 2. pk: 조회할 객체의 기본 키 값.
 > 3. model_id: 조회할 객체의 기본 키 값으로 사용됨.
