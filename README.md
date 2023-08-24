@@ -163,7 +163,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Question.objects.order_by("-pub_date")[:5]
-```
+```  
 
 - DetailView: 특정 객체의 세부 정보를 표시하는 뷰에 사용.
 ```python
@@ -173,7 +173,7 @@ from .models import Question
 class DetailView(generic.DetailView):
     model = Question
     template_name = "polls/detail.html"
-```
+```  
 
 - ResultsView: 특정 결과를 표시하는 뷰.
 
@@ -184,7 +184,7 @@ from .models import Question
 class ResultsView(generic.DetailView):
     model = Question
     template_name = "polls/results.html"
-```
+```  
 
 - reverse(): URL 패턴의 이름과 추가 인수를 받아 해당 URL을 생성.
 ```python
@@ -193,7 +193,7 @@ from django.urls import reverse
 def vote(request, question_id):
     # ... 로직 처리 ...
     return HttpResponseRedirect(reverse('polls:results', args=(question_id,)))
-```
+```  
 
 ### template.html
 > - {forloop.counter}: for 루프 내에서 사용할 수 있는 특별한 변수. 인덱스는 1부터 시작하며, 각 반복마다 1씩 증가.
