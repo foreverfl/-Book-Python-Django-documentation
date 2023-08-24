@@ -17,12 +17,14 @@
 ```bash
 python -m pip install django
 ```
+<br/>
 
 ### Django의 버전을 확인
 ```
 python -m django --version
 ```
-   
+<br/>
+
 ### Django 프로젝트를 시작
 ```bash
 django-admin startproject [project_name] .
