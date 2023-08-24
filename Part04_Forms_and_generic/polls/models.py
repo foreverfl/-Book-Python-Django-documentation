@@ -8,6 +8,10 @@ class Question(models.Model):  # Model 클래스를 상속받아 데이터베이
 
     def __str__(self):
         return self.question_text
+    
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now()
+
 
 
 class Choice(models.Model):
@@ -17,7 +21,5 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.question_text
+        return self.choice_text
 
-    def was_published_recently(self):
-        return self.pub_date >= timezone.now()

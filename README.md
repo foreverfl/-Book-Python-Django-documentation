@@ -82,7 +82,7 @@ python manage.py startapp [app_name]
 > - ENGINE: 'django.db.backends.sqlite3', 'django.db.backends.postgresql', 'django.db.backends.mysql', 또는 'django.db.backends.oracle'.
 > - NAME: 데이터베이스명. SQLite를 쓰고 있다면, 'BASE_DIR / 'db.sqlite3'과 같은 식으로 전체 경로를 입력해야함.
 > 
-> #### By default, INSTALLED_APPS contains the following apps, all of which come with Django:
+> #### INSTALLED_APPS이 기본적으로 포함하는 속성
 > - django.contrib.admin: 관리자 사이트.
 > - django.contrib.auth: 인증 시스템.
 > - django.contrib.contenttypes: 컨텐츠 타입.
@@ -145,7 +145,8 @@ get_object_or_404(Model, pk=model_id).
 > 2. pk: 조회할 객체의 기본 키 값.
 > 3. model_id: 조회할 객체의 기본 키 값으로 사용됨.
 
-### {% %} 태그: template.html에서 동적으로 HTML을 생성.
+### template.html
+#### {% %} 태그: template.html에서 동적으로 HTML을 생성.
 > - 변수 출력: {{ }} 태그를 사용하여 변수의 값을 출력할 수 있음. 예를 들어, {{ variable }}는 variable 변수의 값을 템플릿에 표시함.
 > - 조건문: {% if %}와 {% else %} 태그를 사용하여 조건문을 처리할 수 있음. 특정 조건에 따라 템플릿의 일부를 보여주거나 숨길 수 있음.
 > - 반복문: {% for %}와 {% endfor %} 태그를 사용하여 반복문을 처리할 수 있음. 리스트나 쿼리셋 등과 같은 반복 가능한 객체의 각 요소에 대해 템플릿을 반복하여 렌더링할 수 있음.
@@ -153,6 +154,51 @@ get_object_or_404(Model, pk=model_id).
 > - 기타: {% url %}, {% include %}, {% block %}, {% extends %} 등 다양한 기능을 제공함.
 
 ## Part04. 폼과 제네릭 뷰
+### views.py
+> - IndexView: 객체 리스트를 표시하는 뷰에 사용.
+```python
+class IndexView(generic.ListView):
+    template_name = "polls/index.html"
+    context_object_name = "latest_question_list"
+
+    def get_queryset(self):
+        return Question.objects.order_by("-pub_date")[:5]
+```
+
+> - DetailView: 특정 객체의 세부 정보를 표시하는 뷰에 사용.
+```python
+from django.views import generic
+from .models import Question
+
+class DetailView(generic.DetailView):
+    model = Question
+    template_name = "polls/detail.html"
+```
+
+> - ResultsView: 특정 결과를 표시하는 뷰.
+
+```python
+from django.views import generic
+from .models import Question
+
+class ResultsView(generic.DetailView):
+    model = Question
+    template_name = "polls/results.html"
+```
+
+> - reverse(): URL 패턴의 이름과 추가 인수를 받아 해당 URL을 생성.
+```python
+from django.urls import reverse
+
+def vote(request, question_id):
+    # ... 로직 처리 ...
+    return HttpResponseRedirect(reverse('polls:results', args=(question_id,)))
+```
+
+### template.html
+- {forloop.counter}: for 루프 내에서 사용할 수 있는 특별한 변수. 인덱스는 1부터 시작하며, 각 반복마다 1씩 증가.
+- {variable|pluralize}: Django 템플릿 필터 중 하나로, 값이 1이 아닐 경우 문자열 끝에 's'를 추가. 
+
 ## Part05. 테스트
 ## Part06. 정적 파일
 ## Part07. 관리자 사이트 커스터마이징
