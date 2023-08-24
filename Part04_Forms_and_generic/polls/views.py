@@ -23,8 +23,8 @@ class IndexView(generic.ListView):
     template_name = "polls/index.html"
     context_object_name = "latest_question_list"
 
-    def get_queryset(self):
-        return Question.objects.order_by("-pub_date")[:5]
+    def get_queryset(self): # 모델을 지정함
+        return Question.objects.order_by("-pub_date")[:]
 
 
 # def detail(request, question_id):
