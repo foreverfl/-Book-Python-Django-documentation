@@ -62,7 +62,8 @@ django-admin startproject [project_name] .
 > 
 > - 단점
 > 1. 비교적 새로운 기술이라, 호환성과 지원이 WSGI만큼 넓지 않을 수 있음.
-   
+<br/>
+
 ### 개발 서버를 실행
 ```bash
 python manage.py runserver
