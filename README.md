@@ -17,21 +17,18 @@
 ```bash
 python -m pip install django
 ```
-
-
+   
 ### Django의 버전을 확인
 ```
 python -m django --version
 ```
-
-
+   
 ### Django 프로젝트를 시작
 ```bash
 django-admin startproject [project_name] .
 ```
 이 명령어는 Django 프로젝트를 시작하기 위한 것. [project_name] 자리에는 프로젝트의 이름을 넣어주어야 함. 마침표(.)는 현재 디렉토리에서 프로젝트를 시작하라는 의미. 이 명령어를 실행하면 Django 프로젝트의 기본 구조가 생성되고, 설정 파일과 기본 앱이 함께 만들어짐.
-  
-
+   
 ### 프로젝트 폴더의 구성
 > - [project_name]은 프로젝트의 컨테이너. 그 이름은 Django에게 중요하지 않음. 원하는 이름으로 바꿀 수 있음.
 > - manage.py: 이 Django 프로젝트와 다양한 방식으로 상호 작용할 수 있는 명령줄 유틸리티. django-admin 및 manage.pymanage.py 에 대한 모든 세부 정보를 읽을 수 있음.
@@ -41,8 +38,7 @@ django-admin startproject [project_name] .
 > - mysite/urls.py: 이 Django 프로젝트에 대한 URL 선언. Django 기반 사이트의 "목차".
 > - mysite/asgi.py: 프로젝트를 제공하기 위한 ASGI 호환 웹 서버의 진입점. 
 > - mysite/wsgi.py: 프로젝트를 제공하기 위한 WSGI 호환 웹 서버의 진입점. 
-  
-  
+   
 ### asgi와 wsgi의 차이
 #### wsgi
 > - 장점
@@ -62,28 +58,24 @@ django-admin startproject [project_name] .
 > 
 > - 단점
 > 1. 비교적 새로운 기술이라, 호환성과 지원이 WSGI만큼 넓지 않을 수 있음.
-  
-
+   
 ### 개발 서버를 실행
 ```bash
 python manage.py runserver
 ```
 > 이 명령어는 개발 서버를 실행하는 것. Django 개발 서버는 개발 중인 웹 애플리케이션을 테스트하는 데 사용됨. 이 명령어를 실행하면 웹 서버가 시작되고, 개발 중인 Django 애플리케이션을 웹 브라우저에서 확인할 수 있음. 기본적으로 개발 서버는 http://127.0.0.1:8000/ 주소에서 실행됨.
-  
-
+   
 ### 특정 포트에서 개발 서버를 실행
 ```bash
 python manage.py runserver 8080
 ```
-
-
+   
 ### Django 앱을 생성
 ```bash
 python manage.py startapp [app_name]
 ```
 이 명령어는 Django 앱을 생성하기 위한 것. 이 명령어를 실행하면 새로운 앱이 생성되고, 해당 앱의 기본 구조가 만들어짐. 앱은 Django 프로젝트 내에서 각각의 기능을 모듈화하고 구성하는 데 사용됨.
-
-
+   
 ## Part02. 모델과 관리자 사이트
 ### settings.py
 > #### DATABASES
