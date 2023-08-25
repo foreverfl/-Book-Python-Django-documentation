@@ -211,15 +211,15 @@ def vote(request, question_id):
 
 ## Part06. 정적 파일
 ### settings.py
-- STATIC_URL: 정적 파일을 제공하는 URL의 접두사. 예를 들어, STATIC_URL = '/static/'로 설정하면, 정적 파일은 /static/ 경로를 통해 접근할 수 있음.
-
-- STATICFILES_DIRS: 프로젝트 레벨의 정적 파일들을 담고 있는 디렉터리 목록. STATICFILES_DIRS가 settings.py에서 설정되어 있지 않은 경우, Django는 각 앱의 static 디렉터리에서 정적 파일을 찾게 됨.
-
-- STATIC_ROOT: collectstatic 명령을 실행했을 때, 정적 파일들이 수집되어 저장되는 경로. 배포 환경에서 웹 서버가 직접 정적 파일을 제공할 수 있도록 이 디렉터리를 사용.
-
-- STATICFILES_FINDERS: 정적 파일을 어떻게 찾을 것인지 결정하는 설정. 기본값은 앱의 static 디렉터리와 STATICFILES_DIRS에서 파일을 찾게 설정되어 있음.
-
-- STATICFILES_STORAGE: 정적 파일을 어떻게 저장할 것인지 결정하는 설정. 예를 들어, 클라우드 스토리지를 사용하려면 이 값을 변경해야 할 수 있음.
+> - STATIC_URL: 정적 파일을 제공하는 URL의 접두사. 예를 들어, STATIC_URL = '/static/'로 설정하면, 정적 파일은 /static/ 경로를 통해 접근할 수 있음.
+> 
+> - STATICFILES_DIRS: 프로젝트 레벨의 정적 파일들을 담고 있는 디렉터리 목록. STATICFILES_DIRS가 settings.py에서 설정되어 있지 않은 경우, Django는 각 앱의 static 디렉터리에서 정적 파일을 찾게 됨.
+> 
+> - STATIC_ROOT: collectstatic 명령을 실행했을 때, 정적 파일들이 수집되어 저장되는 경로. 배포 환경에서 웹 서버가 직접 정적 파일을 제공할 수 있도록 이 디렉터리를 사용.
+> 
+> - STATICFILES_FINDERS: 정적 파일을 어떻게 찾을 것인지 결정하는 설정. 기본값은 앱의 static 디렉터리와 STATICFILES_DIRS에서 파일을 찾게 설정되어 있음.
+> 
+> - STATICFILES_STORAGE: 정적 파일을 어떻게 저장할 것인지 결정하는 설정. 예를 들어, 클라우드 스토리지를 사용하려면 이 값을 변경해야 할 수 있음.
 
 ## Part07. 관리자 사이트 커스터마이징
 ## Part08. 서드파티 패키지 추가
