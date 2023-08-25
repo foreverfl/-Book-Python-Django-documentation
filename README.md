@@ -200,6 +200,15 @@ def vote(request, question_id):
 > - {variable|pluralize}: Django 템플릿 필터 중 하나로, 값이 1이 아닐 경우 문자열 끝에 's'를 추가. 
 
 ## Part05. 테스트
+### tests.py
+#### class의 역할
+> - Django의 테스트 프레임워크는 테스트 케이스를 구조화하는데 클래스를 사용. 각 테스트 클래스는 django.test.TestCase를 상속받으며, 테스트 클래스 내의 메서드는 개별 테스트 케이스를 정의함.
+
+#### self의 역할
+> - 테스트 메서드 호출: self.assertQuerySetEqual, self.assertEqual 등의 테스트 어설션 메서드를 호출.
+> - 테스트 케이스 상태 관리: 테스트 케이스의 초기화와 정리 등을 담당하는 메서드에 접근.
+> - 테스트 클라이언트 사용: self.client.get과 같이 Django의 테스트 클라이언트를 사용하여 HTTP 요청을 시뮬레이션.
+
 ## Part06. 정적 파일
 ## Part07. 관리자 사이트 커스터마이징
 ## Part08. 서드파티 패키지 추가
